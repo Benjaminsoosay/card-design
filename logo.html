@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Market - Premium Digital Assets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-text span {
+            font-weight: 300;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+        
+        nav a:hover, nav a.active {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 30px 0;
+            max-width: 700px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 18px 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-bar button {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+
+
+
+
+
+
+
+
+            padding: 0 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar button:hover {
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+        
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .category {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category:hover, .category.active {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 40px 0;
+            display: flex;
+            color: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .hero-image .art {
+            font-size: 8rem;
+            opacity: 0.7;
+        }
+        
+        /* Products Section */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 50px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border-radius: 2px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+        }
+        
+        .product-1 .product-image { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); }
+        .product-2 .product-image { background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%); }
+        .product-3 .product-image { background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%); }
+        .product-4 .product-image { background: linear-gradient(135deg, #f5515f 0%, #9f041b 100%); }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .creator {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .creator i {
+            margin-right: 8px;
+            color: #6a11cb;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .price {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.95rem;
+        }
+        
+        .discounted-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2575fc;
+        }
+        
+        .discount {
+            background: #e6f7ff;
+            color: #1890ff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
+        }
+        
+        /* Featured Shops */
+        .shops {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .shop-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .shop-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .shop-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .shop-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .shop-products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .shop-product {
+            height: 80px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #777;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            text-align: center;
+            color: #777;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                padding: 40px 30px;
+            }
+            
+            .hero-image {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="logo-text">
+                    <span>Creative</span>MARKET
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Shops</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search millions of premium design assets...">
+            <button>Search</button>
+        </div>
+        
+        <!-- Categories -->
+        <div class="categories">
+            <div class="category active">All Categories</div>
+            <div class="category">Photos</div>
+            <div class="category">Graphics</div>
+            <div class="category">Fonts</div>
+            <div class="category">Templates</div>
+            <div class="category">Add-ons</div>
+            <div class="category">Web Themes</div>
+            <div class="category">3D</div>
+        </div>
+        
+        <!-- Hero Banner -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Maximalist Wall Art Collection</h1>
+                <p>3300+ premium designs for personal and commercial use. Limited time offer - 25% off!</p>
+                <a href="#" class="cta-button">SHOP THE COLLECTION</a>
+            </div>
+            <div class="hero-image">
+                <div class="art">
+                    <i class="fas fa-gem"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Products -->
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card product-1">
+                <div class="product-image">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Maximalist Wall Art Bundle</h3>
+                    <div class="creator">
+                        <i class="fas fa-user"></i>by Chipshpow Graphics
+                    </div>
+                    <div class="pricing">
+                        <div class="price">
+                            <span class="original-price">$35.00</span>
+                            <span class="discounted-price">$26.25</span>
+                        </div>
+                        <div class="discount">25% OFF</div>
+                    </div>
+                    <a href="#" class="cta-button">ADD TO CART</a>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card product-2">
+                <div class="product-image">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Noir Et Collection</h3>
+                    <div class="creator">
+                        <i class="fas fa-user"></i>by MuseMaker Studio
+                    </div>
+                    <div class="pricing">
+                        <div class="price">
+                            <span class="original-price">$35.00</span>
+                            <span class="discounted-price">$28.00</span>
+                        </div>
+                        <div class="discount">20% OFF</div>
+                    </div>
+                    <a href="#" class="cta-button">ADD TO CART</a>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card product-3">
+                <div class="product-image">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Serenity Texture Pack</h3>
+                    <div class="creator">
+                        <i class="fas fa-user"></i>by Helios Design
+                    </div>
+                    <div class="pricing">
+                        <div class="price">
+                            <span class="original-price">$24.00</span>
+                            <span class="discounted-price">$19.20</span>
+                        </div>
+                        <div class="discount">20% OFF</div>
+                    </div>
+                    <a href="#" class="cta-button">ADD TO CART</a>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card product-4">
+                <div class="product-image">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Joyeux Noël Bundle</h3>
+                    <div class="creator">
+                        <i class="fas fa-user"></i>by MuseMaker Studio
+                    </div>
+                    <div class="pricing">
+                        <div class="price">
+                            <span class="original-price">$35.00</span>
+                            <span class="discounted-price">$28.00</span>
+                        </div>
+                        <div class="discount">20% OFF</div>
+                    </div>
+                    <a href="#" class="cta-button">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Shops -->
+        <h2 class="section-title">Featured Shops</h2>
+        <div class="shops">
+            <div class="shop-card">
+                <div class="shop-header">
+                    <div class="shop-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="shop-name">MuseMaker Studio</div>
+                </div>
+                <div class="shop-products">
+                    <div class="shop-product"><i class="fas fa-palette"></i></div>
+                    <div class="shop-product"><i class="fas fa-feather"></i></div>
+                    <div class="shop-product"><i class="fas fa-moon"></i></div>
+                    <div class="shop-product"><i class="fas fa-tree"></i></div>
+                    <div class="shop-product"><i class="fas fa-gem"></i></div>
+                    <div class="shop-product"><i class="fas fa-crown"></i></div>
+                </div>
+            </div>
+            
+            <div class="shop-card">
+                <div class="shop-header">
+                    <div class="shop-icon" style="background: linear-gradient(45deg, #ff416c, #ff4b2b);">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    <div class="shop-name">Helios Design</div>
+                </div>
+                <div class="shop-products">
+                    <div class="shop-product"><i class="fas fa-water"></i></div>
+                    <div class="shop-product"><i class="fas fa-mountain"></i></div>
+                    <div class="shop-product"><i class="fas fa-sun"></i></div>
+                    <div class="shop-product"><i class="fas fa-cloud"></i></div>
+                    <div class="shop-product"><i class="fas fa-wind"></i></div>
+                    <div class="shop-product"><i class="fas fa-fire"></i></div>
+                </div>
+            </div>
+            
+            <div class="shop-card">
+                <div class="shop-header">
+                    <div class="shop-icon" style="background: linear-gradient(45deg, #00b09b, #96c93d
